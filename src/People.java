@@ -9,16 +9,14 @@ public class People {
             new LinkedList<PersonRequest>();
 
     public synchronized PersonRequest getPerson() throws Exception {
-        //if (person.isEmpty()) {
-        //return null;
-        //}
         notifyAll();
         return person.poll();
     }
 
     public synchronized void setPerson(PersonRequest a) throws Exception {
-        person.offer(a);
         notifyAll();
+        person.offer(a);
+
     }
 
     public boolean isEmpty() {

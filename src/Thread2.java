@@ -10,15 +10,15 @@ public class Thread2 extends Thread {
 
     public synchronized void run() {
         try {
-            Thread.sleep(10);
             while (!temp.getInputState()) {
+                Thread.sleep(1);
                 while (!temp.isEmpty()) {
                     PersonRequest current = temp.getPerson();
                     ElevatorRun elevator = new ElevatorRun(current,stop);
                     elevator.loadPerson();
                     stop = elevator.getStop();
                 }
-                Thread.sleep(1);
+
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
