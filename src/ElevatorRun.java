@@ -13,7 +13,7 @@ public class ElevatorRun {
 
     private static boolean outputState = false;
 
-    public ElevatorRun(PersonRequest a ,int stop) {
+    public ElevatorRun(PersonRequest a,int stop) {
         this.id = a.getPersonId();
         this.from = a.getFromFloor();
         this.to = a.getToFloor();
