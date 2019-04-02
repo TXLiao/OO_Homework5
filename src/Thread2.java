@@ -9,14 +9,18 @@ public class Thread2 extends Thread {
 
     public synchronized void run() {
         try {
-            PersonRequest current = temp.getPerson();
-            while (current != null) {
-                ElevatorRun elevstor = new ElevatorRun(current);
-                elevstor.loadPerson();
-                current = temp.getPerson();
+
+            while (!temp.getInput()) {
+                while (!temp.isEmpty()) {
+                    PersonRequest current = temp.getPerson();
+                    ElevatorRun elevstor = new ElevatorRun(current);
+                    elevstor.loadPerson();
+                }
+                Thread.sleep(1);
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
+
 }

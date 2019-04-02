@@ -11,6 +11,8 @@ public class ElevatorRun {
     static final long CLOSE = 250;
     static final long PERFLOOR = 500;
 
+    private static boolean outputState = false;
+
     public ElevatorRun(PersonRequest a) {
         this.id = a.getPersonId();
         this.from = a.getFromFloor();
@@ -28,6 +30,7 @@ public class ElevatorRun {
         moveOut(to);
         doorClose(to);
         stop = to;
+        setOutput(true);
     }
 
     void moveTime(int a,int b) {
@@ -63,5 +66,13 @@ public class ElevatorRun {
 
     void moveOut(int stop) {
         TimableOutput.println(String.format("OUT-%d-%d", id, stop));
+    }
+
+    public void setOutput(Boolean a) {
+        outputState = a;
+    }
+
+    public boolean getOutput() {
+        return outputState;
     }
 }

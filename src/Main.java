@@ -1,9 +1,6 @@
 import com.oocourse.TimableOutput;
 
-import static java.lang.System.exit;
-
 public class Main {
-
     public static void main(String[] args) {
         TimableOutput.initStartTimestamp();
         People person = new People();
@@ -11,8 +8,5 @@ public class Main {
         Thread2 output = new Thread2(person);
         input.start();
         output.start();
-        if (!input.isAlive() && person.isEmpty() && !output.isAlive()) {
-            exit(0);
-        }
     }
 }
