@@ -13,9 +13,9 @@ public class Thread2 extends Thread {
             while (!temp.getInputState()) {
                 while (!temp.isEmpty()) {
                     PersonRequest current = temp.getPerson();
-                    ElevatorRun elevstor = new ElevatorRun(current,stop);
-                    elevstor.loadPerson();
-                    stop = elevstor.getStop();
+                    ElevatorRun elevator = new ElevatorRun(current,stop);
+                    elevator.loadPerson();
+                    stop = elevator.getStop();
                 }
                 Thread.sleep(1);
             }

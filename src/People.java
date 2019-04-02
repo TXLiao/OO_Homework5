@@ -9,9 +9,9 @@ public class People {
             new LinkedList<PersonRequest>();
 
     public synchronized PersonRequest getPerson() throws Exception {
-        if (person.isEmpty()) {
-            return null;
-        }
+        //if (person.isEmpty()) {
+        //return null;
+        //}
         notifyAll();
         return person.poll();
     }

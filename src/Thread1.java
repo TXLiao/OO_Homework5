@@ -25,5 +25,4 @@ public class Thread1 extends Thread {
             System.out.println(e.getMessage());
         }
     }
-
 }
