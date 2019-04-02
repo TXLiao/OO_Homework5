@@ -10,6 +10,7 @@ public class Thread2 extends Thread {
 
     public synchronized void run() {
         try {
+            Thread.sleep(10);
             while (!temp.getInputState()) {
                 while (!temp.isEmpty()) {
                     PersonRequest current = temp.getPerson();
