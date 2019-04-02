@@ -25,11 +25,11 @@ public class People {
         return person.isEmpty();
     }
 
-    public boolean getInput() {
+    public boolean getInputState() {
         return inputState;
     }
 
-    public void setInput(Boolean a) {
+    public void setInputState(Boolean a) {
         inputState = a;
     }
 }

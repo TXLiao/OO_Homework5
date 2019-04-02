@@ -3,6 +3,7 @@ import com.oocourse.elevator1.PersonRequest;
 
 public class Thread1 extends Thread {
     private final People temp;
+
     public Thread1(People m) {
         this.temp = m;
     }
@@ -19,7 +20,7 @@ public class Thread1 extends Thread {
                 }
             }
             elevatorInput.close();
-            temp.setInput(true);
+            temp.setInputState(true);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

@@ -31,13 +31,13 @@ public class ElevatorRun {
         moveOut(to);
         doorClose(to);
         stop = to;
-        setOutput(true);
+        setOutputState(true);
     }
 
     void moveTime(int a,int b) {
         int gap = Math.abs(a - b);
         try {
-            Thread.sleep(gap * PERFLOOR + 1);
+            Thread.sleep(gap * PERFLOOR);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -46,7 +46,7 @@ public class ElevatorRun {
     void doorOpen(int stop) {
         TimableOutput.println("OPEN-" + stop);
         try {
-            Thread.sleep(OPEN + 1);
+            Thread.sleep(OPEN);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -54,7 +54,7 @@ public class ElevatorRun {
 
     void doorClose(int stop) {
         try {
-            Thread.sleep(CLOSE + 1);
+            Thread.sleep(CLOSE);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -69,12 +69,8 @@ public class ElevatorRun {
         TimableOutput.println(String.format("OUT-%d-%d", id, stop));
     }
 
-    public void setOutput(Boolean a) {
+    public void setOutputState(Boolean a) {
         outputState = a;
-    }
-
-    public boolean getOutput() {
-        return outputState;
     }
 
     public int getStop() {

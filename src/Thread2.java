@@ -10,7 +10,7 @@ public class Thread2 extends Thread {
 
     public synchronized void run() {
         try {
-            while (!temp.getInput()) {
+            while (!temp.getInputState()) {
                 while (!temp.isEmpty()) {
                     PersonRequest current = temp.getPerson();
                     ElevatorRun elevstor = new ElevatorRun(current,stop);
