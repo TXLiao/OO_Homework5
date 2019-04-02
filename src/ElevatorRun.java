@@ -73,6 +73,10 @@ public class ElevatorRun {
         outputState = a;
     }
 
+    public boolean getOutputState() {
+        return outputState;
+    }
+
     public int getStop() {
         return stop;
     }

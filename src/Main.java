@@ -8,5 +8,11 @@ public class Main {
         Thread2 output = new Thread2(person);
         input.start();
         output.start();
+        try {
+            input.join();
+            output.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
